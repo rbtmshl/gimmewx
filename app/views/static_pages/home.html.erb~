@@ -1,9 +1,6 @@
 <%= render 'shared/currentwx' %>
-<h1><%= @requestor %></h1>
+<h1><%= request.location.city %></h1>
 
 <div class="center">
-    <h4>Welcome to GimmeWeather!</h4>
-    <h2>
-      This is the home page for GimmeWeather!
-    </h2>
+
 </div>

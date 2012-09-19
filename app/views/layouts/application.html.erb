@@ -6,18 +6,26 @@
     <%= javascript_include_tag "application" %>
     <%= csrf_meta_tags %>
     <%= render 'layouts/shim' %> 
+<style type="text/css">
+#outer {height: 60%; overflow: hidden; position: relative;}
+#outer[id] {display: table; position: static;}
+
+#middle[id] {display: table-cell; vertical-align: middle; width: 100%;}
+/* optional: #inner[id] {position: static;} */
+</style>
+    
   </head>
   <body>
     <%= render 'layouts/header' %>
-    <div class="container">
+    <div class="container" id="outer">
+    <div id="middle">
       <% flash.each do |key, value| %>
         <div class="alert alert-<%= key %>"><%= value %></div>
       <% end %>
-      <div class="hero-unit">
+      <div class="hero-unit" id="inner">
 	      <%= yield %>
       </div>
-      <%= render 'layouts/footer' %>
-      <%= debug(params) if Rails.env.development? %>
+    </div>      
     </div>
   </body>
 </html>
