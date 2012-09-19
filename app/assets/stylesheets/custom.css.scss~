@@ -29,7 +29,7 @@ $deepRed: #801A00;
 }
 
 .hero-unit {
-  background: rgba(240, 250, 255, 0.9);
+  background: rgba(240, 250, 255, 0.7);
   h1 {
     font-size: 2em;
     letter-spacing: -2px;
