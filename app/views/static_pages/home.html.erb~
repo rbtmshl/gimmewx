@@ -1,3 +1,9 @@
-<% provide(:title, 'Your Weather') %>
-<h1>GimmeWeather!</h1>
-<p>This is the homepage for GimmeWeather!</p>
+<%= render 'shared/currentwx' %>
+<h1><%= @requestor %></h1>
+
+<div class="center">
+    <h4>Welcome to the GimmeWeather!</h4>
+    <h2>
+      This is the home page for GimmeWeather!
+    </h2>
+</div>
