@@ -1,3 +1,2 @@
-<% provide(:title, 'Your Weather') %>
 <h1>GimmeWeather!</h1>
 <p>This is the homepage for GimmeWeather!</p>
