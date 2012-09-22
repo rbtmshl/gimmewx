@@ -1,11 +1,11 @@
 class StaticPagesController < ApplicationController
   def home
-     require 'open-uri'
+    require 'open-uri'
     docname = "http://www.geoplugin.net/xml.gp?ip=" + request.ip
-    @requestor = request.ip
     docu = Nokogiri::XML(open(docname))
     city = docu.xpath("//geoplugin_city")
-    if (city[0].content.length < 2)
+    country = docu.xpath("//geoplugin_countryName")
+    if ((city[0].content.length < 2) || (country[0].content.to_s != "United States") )
       @city = "Portland"
       @state = "OR"
       @lat = "45.58"

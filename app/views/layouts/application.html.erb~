@@ -7,22 +7,18 @@
     <%= csrf_meta_tags %>
     <%= render 'layouts/shim' %> 
 <style type="text/css">
-#outer {height: 60%; overflow: hidden; position: relative;}
-#outer[id] {display: table; position: static;}
 
-#middle[id] {display: table-cell; vertical-align: middle; width: 100%;}
-/* optional: #inner[id] {position: static;}
 </style>
     
   </head>
   <body>
     <%= render 'layouts/header' %>
-    <div class="container" id="outer">
-    <div id="middle">
+    <div class="container" style="display: table; height: 400px; #position: relative; overflow: hidden;">
+    <div style=" #position: absolute; #top: 50%;display: table-cell; vertical-align: middle;">
       <% flash.each do |key, value| %>
         <div class="alert alert-<%= key %>"><%= value %></div>
       <% end %>
-      <div class="hero-unit" id="inner">
+      <div class="hero-unit" style=" #position: relative; #top: -50%">
 	      <%= yield %>
       </div>
     </div>      

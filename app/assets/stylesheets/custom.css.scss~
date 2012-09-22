@@ -48,6 +48,19 @@ $deepRed: #801A00;
   padding: 0;
 }
 
+.accordion, .accordion-group, .accordion-inner, .accordion-heading, .accordion-toggle, .accordion-body, .collapse, .in {
+  margin-top: 0;
+  border: 0;
+  a {
+    font-size: 10px;
+    font-weight: bold;  
+    color: $grayLight;
+    &:hover { 
+      color: $gray;
+    }
+  }  
+}
+
 ul {
   list-style: none;
 }
@@ -559,10 +572,10 @@ aside {
     vertical-align: middle;
   }
   background: rgba(0, 1, 18, 0.0);
-  padding: 0px 0 0px 0;
+  padding: 10px 0 0 0;
   margin-left: -60px;
   margin-right: -60px;
-  margin-bottom: 30px;
+  margin-bottom: 0px;
 }
 
 
