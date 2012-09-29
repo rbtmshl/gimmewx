@@ -6,10 +6,36 @@
     <%= javascript_include_tag "application" %>
     <%= csrf_meta_tags %>
     <%= render 'layouts/shim' %> 
-<style type="text/css">
-
-</style>
-    
+    <link rel="stylesheet" href="path_to_bootstrap/bootstrap.min.css">
+    <% if (@temperature.to_i < 80) %>
+      <style type="text/css">
+	html, body {
+	  background: url(http://www.25eighty.com/wp-content/uploads/2012/01/Portland-Skyline.jpg);
+	  -webkit-background-size: 100% 100%;
+  	  -moz-background-size: 100% 100%;
+	  -o-background-size: 100% 100%;
+	  background-size: 100% 100%;
+	  height: 100%;
+	  min-height: 100%;
+	  background-repeat: no-repeat;
+	  background-attachment:fixed;
+	}
+      </style>
+    <% else %>
+      <style type="text/css">
+	html, body {
+	  background: url(http://unicollective.com/blog/wp-content/uploads/2012/07/seatowncirlce.jpg);
+	  -webkit-background-size: 100% 100%;
+  	  -moz-background-size: 100% 100%;
+	  -o-background-size: 100% 100%;
+	  background-size: 100% 100%;
+	  height: 100%;
+	  min-height: 100%;
+	  background-repeat: no-repeat;
+	  background-attachment:fixed;
+	}
+      </style>
+    <% end %>
   </head>
   <body>
     <%= render 'layouts/header' %>
@@ -21,6 +47,9 @@
       <div class="hero-unit" style=" #position: relative; #top: -50%">
 	      <%= yield %>
       </div>
+      <% (4101..5408).each do |i| %>
+	"<%= City.all[i-1].name %>", 
+      <% end %>
     </div>      
     </div>
   </body>

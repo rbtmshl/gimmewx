@@ -11,7 +11,16 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20120921071625) do
+ActiveRecord::Schema.define(:version => 20120925003333) do
+
+  create_table "cities", :force => true do |t|
+    t.string   "name"
+    t.string   "state"
+    t.string   "lat"
+    t.string   "lon"
+    t.datetime "created_at", :null => false
+    t.datetime "updated_at", :null => false
+  end
 
   create_table "correctlocations", :force => true do |t|
     t.string   "ip"

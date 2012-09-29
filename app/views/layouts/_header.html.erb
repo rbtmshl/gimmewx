@@ -4,15 +4,11 @@
       <%= link_to "GimmeWeather!", root_path, id: "logo", class: "brand" %>
       <nav>
         <ul class="nav pull-right">
-	  <li><%= link_to "Home", root_path %></li>
-	  <li><%= link_to "About", about_path %></li>
-	  <li><%= link_to "Help", help_path %></li>
-	  <li><%= link_to "Contact", contact_path %></li>
-          
+		<li><input type="text" data-provide="typeahead" id="search" data-source='<%= Gimmewx::Application::US_CITIES + Gimmewx::Application::US_CITIES2 + Gimmewx::Application::US_CITIES3 + Gimmewx::Application::US_CITIES4 + Gimmewx::Application::US_CITIES1 %>' data-items="4" class="span3" style="height: 10px; margin-top: 10px; margin-bottom: 0;" /></li>
+	  <li><%= link_to "Search", root_path %></li>
         </ul>
       </nav>
     </div>
   </div>
 </header>
-
 

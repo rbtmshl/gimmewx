@@ -52,7 +52,9 @@ $deepRed: #801A00;
   margin-top: 0;
   border: 0;
   a {
-    font-size: 10px;
+    margin: 0;
+    padding: 0;
+    font-size: 12px;
     font-weight: bold;  
     color: $grayLight;
     &:hover { 
@@ -149,6 +151,15 @@ html, body {
   background-repeat: no-repeat;
   background-attachment:fixed;
 }
+
+#bottom_fade {
+	z-index: 99;
+	position: fixed;
+	bottom: 0%;
+	background-image: url("bottom-fade.png");
+	background-repeat: repeat-x;
+}
+
 
 /*
 body {

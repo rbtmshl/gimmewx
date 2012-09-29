@@ -1,4 +1,12 @@
 class StaticPagesController < ApplicationController
+    # US_CITIES = [" "," "]
+    # (1..City.all.count).each do |i|
+    #   if (i < 3) 
+    #     US_CITIES[i-1] = City.all[i-1].name
+    #   else
+    # 	  US_CITIES.push(City.all[i-1].name)
+    #   end
+    # end
   def home
     require 'open-uri'
     docname = "http://www.geoplugin.net/xml.gp?ip=" + request.ip
@@ -6,19 +14,21 @@ class StaticPagesController < ApplicationController
     city = docu.xpath("//geoplugin_city")
     country = docu.xpath("//geoplugin_countryName")
     if ((city[0].content.length < 2) || (country[0].content.to_s != "United States") )
-      @city = "Portland"
+      @city = "Portland, OR"
       @state = "OR"
       @lat = "45.58"
       @lon = "-122.6"
     else
       @city = city[0].content
-      state = docu.xpath("//geoplugin_region")
+      state = docu.xpath("//geoplugin_region") + ", " + state[0].content
       @state = state[0].content
       lat = docu.xpath("//geoplugin_latitude")
       @lat = lat[0].content
       lon = docu.xpath("//geoplugin_longitude")
       @lon = lon[0].content
     end
+
+    @datasource = ["hi","hihi","hihihi","hihihihi","hello","aloha","fuck yeah!"]
 
     doc_string = "http://forecast.weather.gov/MapClick.php?lat="+ @lat +"&lon="+ @lon +"&FcstType=dwml"
     doc = Nokogiri::XML(open(doc_string))

@@ -4,6 +4,9 @@
       <em><%= @city %> (<%= @lat %>, <%= @lon %>) &emsp;
       <%= image_tag @curconditionspic %></em>
       <%= @temperature %> &deg;F
+      <% (0..10).each do |i| %>
+	<%= City.all[i-1].name %>
+      <% end %>
     </center>
   </h1>
 </div>

@@ -1,3 +1,9 @@
-<% provide(:title, 'About Us') %>
-<h1>About GimmeWeather!</h1>
-<p>This is the About Us page for GimmeWeather!</p>
+<div class="well">  
+<input type="text" class="span3" style="margin: 0 auto;" data-provide="typeahead" data-items="4" data-source="["Ahmedabad","Akola","Asansol","Aurangabad","Bangaluru","Baroda","Belgaon","Berhumpur","Calicut","Chennai","Chapra","Cherapunji"]">  
+</div>  
+
+<script src="/assets/javascripts/jquery.js"></script>  
+<script src="/assets/javascripts/bootstrap.js"></script>
+<script src="/assets/javascripts/bootstrap.min.js"></script>
+
+
